@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emission Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+</head>
+<body>
+    {% if show_results %}
+        <h1>Total Carbon Emissions</h1>
+        <p>The total emissions for the given inputs are: {{ total }} kg of CO2</p>
+
+        <h2>Carbon Offsets Needed</h2>
+        <ul>
+            {% for method, units in offsets.items() %}
+                <li>{{ method }}: {{ units | round(2) }} units</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/submit">Go back to form</a>
+    {% else %}
+        <h1>Carbon Emissions Form</h1>
+        <form method="POST">
+            <label for="coal">Coal Extracted (tons):</label>
+            <input type="number" id="coal" name="coal" step="any" required><br>
+
+            <label for="kilometers">Kilometers Traveled:</label>
+            <input type="number" id="kilometers" name="kilometers" step="any" required><br>
+
+            <label for="energy">Energy Used (kWh):</label>
+            <input type="number" id="energy" name="energy" step="any" required><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+</body>
+</html>

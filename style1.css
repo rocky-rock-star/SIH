@@ -1,0 +1,133 @@
+/* Base styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg); /* Blackish background */
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Form styling */
+.form-wrapper {
+    background-color: #3a3a3a; /* Greyish background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff; /* White text */
+}
+
+h1, p {
+    color: #fff; /* White text */
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    color: #ddd; /* Lighter grey for labels */
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    background-color: #2b2b2b; /* Darker input background */
+    color: #fff; /* White text inside inputs */
+}
+
+input[type="number"]:focus {
+    border-color: #007bff; /* Highlight border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button container styling */
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust this value to control spacing between buttons */
+    margin-top: 20px; /* Adds space above the buttons */
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Add a focus ring */
+}
+
+/* Results section */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #4a4a4a; /* Greyish background for result section */
+    border-radius: 8px;
+}
+
+.result h2, .result p {
+    color: #fff; /* White text */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .form-wrapper {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
