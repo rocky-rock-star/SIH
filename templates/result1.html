@@ -15,11 +15,23 @@
             <p><strong>Coal Emissions:</strong> {{ energy | round(3)  }} tons of CO2</p>
             <p><strong>Total Emissions:</strong> {{ total | round(3) }} tons of CO2</p>
             <h2>Offsets Needed to Reach Carbon Neutrality:</h2>
-            <ul>
-            {% for method, units in offsets.items() %}
-                <li><strong>{{ method }}:</strong> {{ units | round(2) }} units</li>
-            {% endfor %}
-            </ul>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Offset Method</th>
+                        <th>Units Needed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for method, units in offsets.items() %}
+                    <tr>
+                        <td>{{ method }}</td>
+                        <td>{{ units | round(2) }} units</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
 
             <!-- Option to return to the form -->
             <!-- <a href="/">Go back to form</a> -->
