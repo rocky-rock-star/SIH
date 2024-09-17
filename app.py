@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 def get_activity_emission(coal_extracted, kms_traveled, kwh_used): #create dictionary to store activity wise emissions
     emissions_dict = {
-        'coal': coal_extracted * emission_factors['Mining'],
-        'travel': kms_traveled * emission_factors['Transport'],
-        'kwh': kwh_used * emission_factors['Machinery Operation']
+        'Mining': coal_extracted * emission_factors['Mining'],
+        'Transportation': kms_traveled * emission_factors['Transport'],
+        'Energy used in machinery': kwh_used * emission_factors['Machinery Operation']
     }
     return emissions_dict
 
