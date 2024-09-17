@@ -8,34 +8,51 @@
 </head>
 <body>
     <section>
-        <ul>
-            <h1>Total Carbon Emissions</h1>
-            <p><strong>Coal Emissions:</strong> {{ coal | round(3) }} tons of CO2</p>
-            <p><strong>Transport Emissions:</strong> {{ transport | round(3) }} tons of CO2</p>
-            <p><strong>Coal Emissions:</strong> {{ energy | round(3)  }} tons of CO2</p>
-            <p><strong>Total Emissions:</strong> {{ total | round(3) }} tons of CO2</p>
-            <h2>Offsets Needed to Reach Carbon Neutrality:</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Offset Method</th>
-                        <th>Units Needed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for method, units in offsets.items() %}
-                    <tr>
-                        <td>{{ method }}</td>
-                        <td>{{ units | round(2) }} units</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+        <h1>Total Emission from all of your company's operation = {{ total | round(2) }} tons</h1>
+    </section>
+    
+    <section>
+        <h2>Activity Wise Emissions</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Emissions in tons</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for activity, emissions in emission.items() %}
+                <tr>
+                    <td>{{ activity }}</td>
+                    <td>{{ emissions | round(2) }} units</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </section>
+
+        <section>
+        <h2>Offsets Needed to Reach Carbon Neutrality:</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Offset Method</th>
+                    <th>Units Needed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for method, units in offsets.items() %}
+                <tr>
+                    <td>{{ method }}</td>
+                    <td>{{ units | round(2) }} units</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
 
             <!-- Option to return to the form -->
             <!-- <a href="/">Go back to form</a> -->
-        </ul>
     </section>
 </body>
 </html>

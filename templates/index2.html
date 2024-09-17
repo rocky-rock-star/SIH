@@ -46,30 +46,6 @@
                 <div id="feedbackMessage" class="feedback-message"></div>
                 <div id="loadingSpinner" class="loading-spinner" hidden></div>
             </form>
-
-            <!-- Navigation to results -->
-            <div class="form-buttons">
-                <button onclick="document.getElementById('showResults').checked = true;">View Results</button>
-            </div>
-        </div>
-
-        <!-- Result Section -->
-        <div class="result-wrapper">
-            <h1>Emission Calculator Result</h1>
-            <p>Your calculated carbon emissions based on the provided data are displayed below.</p>
-
-            <div class="result">
-                <h2>Results</h2>
-                <p><strong>Coal Emissions:</strong> {{ coal }} tons CO2</p>
-                <p><strong>Transportation Emissions:</strong> {{ transport }} tons CO2</p>
-                <p><strong>Energy Emissions:</strong> {{ energy }} tons CO2</p>
-                <p><strong>Total Emissions:</strong> {{ total }} tons CO2</p>
-            </div>
-
-            <!-- Navigation back to form -->
-            <div class="form-buttons">
-                <button onclick="document.getElementById('showForm').checked = true;">Go Back</button>
-            </div>
         </div>
     </div>
 </body>
