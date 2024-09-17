@@ -28,8 +28,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    color: #fff;
-    display: none; /* Hide by default */
+    color: #fff;; /* Hide by default */
 }
 
 .form-wrapper.active, .result-wrapper.active {
@@ -183,4 +182,13 @@ input[type="radio"] {
 /* Ensuring text is white in tables */
 th, td {
     color: #fff;
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin-bottom: 20px; 
 }
