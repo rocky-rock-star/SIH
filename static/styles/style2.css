@@ -181,10 +181,7 @@ input[type="radio"] {
 }
 
 
-ul {
-    color:#fff
+th, td, h2 {
+    color: #fff;
 }
 
-li {
-    color:#fff
-}
