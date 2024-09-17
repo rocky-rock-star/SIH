@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emission Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style2.css') }}"/>
+</head>
+<body>
+    <div class="container">
+        <!-- Hidden Radio Buttons for Toggle -->
+        <input type="radio" name="toggle" id="showForm" checked>
+        <input type="radio" name="toggle" id="showResults">
+
+        <!-- Form Section -->
+        <div class="form-wrapper">
+            <h1>Emission Calculator</h1>
+            <p>Calculate your carbon emissions based on coal mining, transportation, and machinery power usage.</p>
+            <form id="emissionForm" action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="coal" aria-describedby="coalHelp">Coal mined (in tons):</label>
+                    <input type="number" id="coal" name="coal" required placeholder="Enter tons of coal">
+                    <small id="coalHelp" class="form-text">Enter the amount of coal mined in tons.</small>
+                    <div id="coalError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="transport" aria-describedby="transportHelp">Transportation distance (in km):</label>
+                    <input type="number" id="transport" name="transport" required placeholder="Enter kilometers traveled">
+                    <small id="transportHelp" class="form-text">Enter the distance traveled in kilometers.</small>
+                    <div id="transportError" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="power" aria-describedby="powerHelp">Power usage (in kWh):</label>
+                    <input type="number" id="power" name="power" required placeholder="Enter kWh used">
+                    <small id="powerHelp" class="form-text">Enter the power usage in kilowatt-hours.</small>
+                    <div id="powerError" class="error-message"></div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit">Calculate Emissions</button>
+                    <button type="reset">Reset Form</button>
+                </div>
+
+                <div id="feedbackMessage" class="feedback-message"></div>
+                <div id="loadingSpinner" class="loading-spinner" hidden></div>
+            </form>
+
+            <!-- Navigation to results -->
+            <div class="form-buttons">
+                <button onclick="document.getElementById('showResults').checked = true;">View Results</button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="result-wrapper">
+            <h1>Emission Calculator Result</h1>
+            <p>Your calculated carbon emissions based on the provided data are displayed below.</p>
+
+            <div class="result">
+                <h2>Results</h2>
+                <p><strong>Coal Emissions:</strong> {{ coal }} tons CO2</p>
+                <p><strong>Transportation Emissions:</strong> {{ transport }} tons CO2</p>
+                <p><strong>Energy Emissions:</strong> {{ energy }} tons CO2</p>
+                <p><strong>Total Emissions:</strong> {{ total }} tons CO2</p>
+            </div>
+
+            <!-- Navigation back to form -->
+            <div class="form-buttons">
+                <button onclick="document.getElementById('showForm').checked = true;">Go Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
